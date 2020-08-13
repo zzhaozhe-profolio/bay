@@ -9,15 +9,18 @@
           {% if page.slug and page.slug != "" and page.slug != nil %}
             {% if page.slug == "CV" %}
               {% assign page_link = "https://zzhaozhe-profolio.github.io/ZheZhao/CV/CV-ZZ.pdf" %}
+              <a class="page-link" src="{{ page_link }}">
+                {{ page.name }}
             {% else %}
               {% assign page_link = page.slug %}
+              {% assign page_link = page_link | absolute_url %}
+              <a class="page-link" href="{{ page_link }}">
+                {{ page.name }}
             {% endif %}
           {% else %}
             {% assign page_link = "/" | append: page.name | downcase %}
           {% endif %}
-          {% assign page_link = page_link | absolute_url %}
-          <a class="page-link" href="{{ page_link }}">
-            {{ page.name }}
+          
           
           </a>
         {% endfor %}
