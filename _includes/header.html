@@ -7,8 +7,9 @@
       <div class="menu">
         {% for page in site.header.pages %}
           {% if page.slug and page.slug != "" and page.slug != nil %}
-            {% if page.name == CV %}
-              <a class="page-link" href="https://zzhaozhe-profolio.github.io/ZheZhao/CV/CV-ZZ.pdf">
+            {% if page.slug == "https://zzhaozhe-profolio.github.io/ZheZhao/cv" %}
+              {% assign page_link = "https://zzhaozhe-profolio.github.io/ZheZhao/CV/CV-ZZ.pdf" | absolute_url %}
+              <a class="page-link" href=page_link>
                 {{ page.name }}
               </a>
             {% else %}
