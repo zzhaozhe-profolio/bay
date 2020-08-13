@@ -8,4 +8,5 @@ items:
 ---
 
 <br />
+This page shows projects that I have done
 <br />
