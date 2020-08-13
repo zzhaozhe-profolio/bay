@@ -8,16 +8,11 @@
         {% for page in site.header.pages %}
           {% if page.slug and page.slug != "" and page.slug != nil %}
             {% assign page_link = page.slug %}
-            {% assign page_link = page_link | absolute_url %}
-            <a class="page-link" href="{{ page_link }}">
-          {% if page.slug == "CV" %}
-            {% assign page_link = "{{ site.baseurl }}/assets/CV-ZZ.pdf" %}
-            <a class="page-link" href="{{ page_link }}">
           {% else %}
             {% assign page_link = "/" | append: page.name | downcase %}
-            {% assign page_link = page_link | absolute_url %}
-            <a class="page-link" href="{{ page_link }}">
           {% endif %}
+          {% assign page_link = page_link | absolute_url %}
+          <a class="page-link" href="{{ page_link }}">
             {{ page.name }}
           
           </a>
