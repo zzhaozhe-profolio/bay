@@ -7,19 +7,20 @@
       <div class="menu">
         {% for page in site.header.pages %}
           {% if page.slug and page.slug != "" and page.slug != nil %}
-            {% if page.slug == "cv" %}
+            {% if page.slug == "/cv" %}
               <a class="page-link" href="https://zzhaozhe-profolio.github.io/ZheZhao/CV/CV-ZZ.pdf">
                 {{ page.name }}
-               </a>
+              </a>
             {% else %}
               {% assign page_link = page.slug %}
               {% assign page_link = page_link | absolute_url %}
               <a class="page-link" href="{{ page_link }}">
                 {{ page.name }}
-               </a>
+              </a>
             {% endif %}
           {% else %}
             {% assign page_link = "/" | append: page.name | downcase %}
+            {% assign page_link = page_link | absolute_url %}
             <a class="page-link" href="{{ page_link }}">
                 {{ page.name }}
             </a>
